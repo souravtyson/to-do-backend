@@ -1,0 +1,45 @@
+###
+GET http://localhost:8080/api/v1/tasks
+Content-Type: application/json
+
+<> 2025-05-10T233952.200.json
+<> 2025-05-10T233950.200.json
+<> 2025-05-10T233947.200.json
+<> 2025-05-10T233815.200.json
+<> 2025-05-10T233813.200.json
+<> 2025-05-10T233812.200.json
+<> 2025-05-10T233810.200.json
+<> 2025-05-10T233808.200.json
+<> 2025-05-10T233733.200.json
+<> 2025-05-10T233727.200.json
+<> 2025-05-10T233722.200.json
+<> 2025-05-10T233519.200.json
+<> 2025-05-10T233425.200.json
+<> 2025-05-10T231628.200.json
+<> 2025-05-10T231627.200.json
+<> 2025-05-10T231625.200.json
+<> 2025-05-10T231450.200.json
+<> 2025-05-10T231444.200.json
+<> 2025-05-10T231400.200.json
+
+
+###
+POST http://localhost:8080/api/v1/task/save
+Content-Type: application/json
+
+{
+  "title": "Learn Vue"
+}
+
+<> 2025-05-10T233725.200.txt
+
+###
+POST http://localhost:8080/api/v1/task/1/status/complete
+Content-Type: application/json
+
+<> 2025-05-11T021033.200.txt
+<> 2025-05-11T020643.400.json
+<> 2025-05-11T020440.400.json
+<> 2025-05-11T020228.400.json
+<> 2025-05-11T020026.400.json
+<> 2025-05-11T015903.400.json
