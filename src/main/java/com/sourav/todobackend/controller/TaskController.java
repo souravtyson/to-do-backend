@@ -30,7 +30,7 @@ public class TaskController {
              11. Add code for update task
              12. Add code for complete/incomplete task
              13. configure actuator
-             14. spring profiling
+             14. spring profiling - done
              15. spring boot AOP
      */
 
