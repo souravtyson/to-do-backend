@@ -2,6 +2,8 @@ package com.sourav.todobackend.controller;
 
 
 import com.sourav.todobackend.model.Task;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,7 @@ public class TaskController {
     /* TODO: 1. add hot reload concept - done
              2. add logging - done
              3. add exception handling
-             4. add swagger
+             4. add swagger - done
              5. add security
              6. header validation with custom exception handling
              7. Return with ResponseEntity instead of List<Task> or check for better approach
@@ -36,6 +38,7 @@ public class TaskController {
 
     ArrayList<Task> tasks = new ArrayList<>();
 
+    @Tag(name="Tasks", description = "this is task lists")
     @GetMapping("/tasks")
     public ResponseEntity<List<Task>> getTasks(@RequestHeader HttpHeaders headers) {
         if(tasks.isEmpty()) {
@@ -52,6 +55,7 @@ public class TaskController {
         return ResponseEntity.ok(tasks);
     }
 
+    @Tag(name = "Save Task", description = "Saving of task")
     @PostMapping("/task/save")
     public ResponseEntity<String> saveTask(@RequestBody Task task, @RequestHeader HttpHeaders headers) {
         if (Objects.nonNull(task) || Objects.nonNull(task.title()) || !task.title().isEmpty()) {
@@ -64,6 +68,7 @@ public class TaskController {
         }
     }
 
+    @Tag(name="Task Status", description = "Updating task status by taskId")
     @PostMapping("/task/{taskId}/status/{taskStatus}")
     public String updateStatus(@PathVariable(value = "taskStatus") String taskStatus, @RequestHeader HttpHeaders headers, @PathVariable(value = "taskId") String taskId) {
         log.debug("header found is {}", headers.getContentType());

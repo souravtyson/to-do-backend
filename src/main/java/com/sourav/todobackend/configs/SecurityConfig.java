@@ -15,14 +15,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         
-        httpSecurity.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/public/**").permitAll()
-                .anyRequest().authenticated()
-            ).oauth2ResourceServer(oauth2 -> oauth2
-                .jwt(jwt -> jwt
-                    .jwtAuthenticationConverter(keycloakJwtConverter())
-                )
-            );
+        // httpSecurity.authorizeHttpRequests(auth -> auth
+        //         .requestMatchers("/public/**").permitAll()
+        //         .anyRequest().authenticated()
+        //     ).oauth2ResourceServer(oauth2 -> oauth2
+        //         .jwt(jwt -> jwt
+        //             .jwtAuthenticationConverter(keycloakJwtConverter())
+        //         )
+        //     );
 
         httpSecurity.cors(cor -> cor.configurationSource(req -> {
             CorsConfiguration config = new CorsConfiguration();
@@ -36,9 +36,5 @@ public class SecurityConfig {
         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return httpSecurity.build();
-    }
-
-    public JwtAuthenticationConverter keycloakJwtConverter() {
-        
     }
 }
