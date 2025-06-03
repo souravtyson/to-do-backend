@@ -3,6 +3,8 @@ package com.sourav.todobackend.controller;
 
 import com.sourav.todobackend.model.Task;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -17,6 +19,13 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/v1")
 @Slf4j
+@OpenAPIDefinition(
+        info = @Info(
+                title = "Task APIs",
+                description = "These are the task apis that we use for creating, updating deleting",
+                version = "1.0.0"
+        )
+)
 public class TaskController {
 
     /* TODO: 1. add hot reload concept - done
